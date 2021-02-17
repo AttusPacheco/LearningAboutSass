@@ -23,4 +23,12 @@
 
      - `npm install -g sass`
      
+ - To verify that the installation worked, execute: `sass --version`
+     
+### Using
+
+ - How to compile `Sass` to `Css`
+    - `sass (First parameter is your sass file path) (Second parameter is your css file path)`
+    - Example: `sass public/sass/base.sass public/css/style.css`
+     
  
