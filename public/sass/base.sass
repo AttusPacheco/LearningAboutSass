@@ -79,12 +79,6 @@ header
       height: 100px
       @include transition((500ms height, 1s top, 1s background))
 
-      .main-nav-mb-item
-        list-style: none
-        display: block
-        padding: 10px 30px
-        font-weight: bold
-
       &:hover
         top: 0
         height: 100%
@@ -95,8 +89,8 @@ header
           height: 70px
 
       div.title
-        @extend .main-nav-mb-item
         padding: 0
+        font-weight: bold
         font-size: 17px
         display: flex
         justify-content: center
@@ -111,7 +105,10 @@ header
         overflow-y: auto
 
         li
-          @extend .main-nav-mb-item
+          list-style: none
+          display: block
+          padding: 10px 30px
+          font-weight: bold
 
           &:hover a
             color: $header-button-active-color

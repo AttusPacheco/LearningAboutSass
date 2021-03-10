@@ -90,12 +90,6 @@ header nav div.main-nav-mb {
   -o-transition: 500ms height, 1s top, 1s background;
   transition: 500ms height, 1s top, 1s background;
 }
-header nav div.main-nav-mb .main-nav-mb-item, header nav div.main-nav-mb ul li, header nav div.main-nav-mb div.title {
-  list-style: none;
-  display: block;
-  padding: 10px 30px;
-  font-weight: bold;
-}
 header nav div.main-nav-mb:hover {
   top: 0;
   height: 100%;
@@ -110,6 +104,7 @@ header nav div.main-nav-mb:hover div.title {
 }
 header nav div.main-nav-mb div.title {
   padding: 0;
+  font-weight: bold;
   font-size: 17px;
   display: flex;
   justify-content: center;
@@ -125,6 +120,12 @@ header nav div.main-nav-mb ul {
   padding: 0;
   height: 89.5%;
   overflow-y: auto;
+}
+header nav div.main-nav-mb ul li {
+  list-style: none;
+  display: block;
+  padding: 10px 30px;
+  font-weight: bold;
 }
 header nav div.main-nav-mb ul li:hover a {
   color: #cf649a;
