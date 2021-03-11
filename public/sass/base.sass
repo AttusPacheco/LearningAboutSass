@@ -18,6 +18,9 @@ a
   text-decoration: none
   display: block
 
+body
+  background: #fff
+
 header
   nav
     display: flex
@@ -121,6 +124,70 @@ header
             color: $header-button-color
             @include transition(0.5s color)
 
+.main
+  .banner
+    width: fit-content
+
+    img
+      width: 100%
+      height: 380px
+      object-fit: cover
+
+  .section-spaced
+    width: 80%
+    margin: 35px auto
+
+    .title
+      font-size: $title-font-size
+      font-weight: $title-font-weight
+      color: $title-color
+      text-align: center
+      border-top: 2px
+      border-left: 0
+      border-right: 0
+      border-top: 0
+      border-style: dashed
+      border-color: rgba(0, 0, 0, .2)
+      padding: 10px
+      width: 80%
+      margin: 0 auto
+
+    .images
+      display: flex
+      justify-content: center
+      align-content: center
+      flex-wrap: wrap
+      margin: 25px 10px 0
+
+      .image-group
+        flex: 45%
+        padding: 0 10px
+
+      .image
+        width: 100%
+        object-fit: cover
+        @include border-radius(5px)
+        @include transition(.3s)
+        @include box-shadow($default-box-shadow)
+
+        &:hover
+          @include transform(scale(1.03))
+
+      .small-image
+        margin: 0 0 15px
+
+        img
+          height: 140px
+          max-height: 140px
+          @extend .image
+
+      .large-image
+        margin: 0 0 15px
+
+        img
+          height: 260px
+          max-height: 260px
+          @extend .image
 
 @media only screen and (max-width: $sz-mb-large)
   header

@@ -110,8 +110,8 @@
     - Example: `sass public/sass/base.sass public/css/style.css`
     
  - Compile using `Watch`
-    
-    - Using the `watch` method, sass will check every change in the first file and compile every change made.
+
+    - Using the `watch` method, sass will check every change in the first file and compile every change made, and is the most pratic.
     - Example: `sass --watch public/sass/base.sass public/css/style.css`
     - To stop file watch, press `Ctrl + C`
     

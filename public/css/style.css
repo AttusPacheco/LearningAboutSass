@@ -18,6 +18,10 @@ a {
   display: block;
 }
 
+body {
+  background: #fff;
+}
+
 header nav {
   display: flex;
   justify-content: normal;
@@ -66,7 +70,7 @@ header nav div.main-nav ul li:first-child a {
 header nav div.main-nav ul li a {
   font-weight: 600;
   font-size: 15px;
-  color: #1c1c1c;
+  color: #262626;
   -webkit-transition: 0.5s color;
   -moz-transition: 0.5s color;
   -o-transition: 0.5s color;
@@ -135,11 +139,86 @@ header nav div.main-nav-mb ul li:first-child a {
   font-size: 15px;
 }
 header nav div.main-nav-mb ul li a {
-  color: #1c1c1c;
+  color: #262626;
   -webkit-transition: 0.5s color;
   -moz-transition: 0.5s color;
   -o-transition: 0.5s color;
   transition: 0.5s color;
+}
+
+.main .banner {
+  width: fit-content;
+}
+.main .banner img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+.main .section-spaced {
+  width: 80%;
+  margin: 35px auto;
+}
+.main .section-spaced .title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #cf649a;
+  text-align: center;
+  border-top: 2px;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-style: dashed;
+  border-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto;
+}
+.main .section-spaced .images {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 25px 10px 0;
+}
+.main .section-spaced .images .image-group {
+  flex: 45%;
+  padding: 0 10px;
+}
+.main .section-spaced .images .image, .main .section-spaced .images .large-image img, .main .section-spaced .images .small-image img {
+  width: 100%;
+  object-fit: cover;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+}
+.main .section-spaced .images .image:hover, .main .section-spaced .images .large-image img:hover, .main .section-spaced .images .small-image img:hover {
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -o-transform: scale(1.03);
+  transform: scale(1.03);
+}
+.main .section-spaced .images .small-image {
+  margin: 0 0 15px;
+}
+.main .section-spaced .images .small-image img {
+  height: 140px;
+  max-height: 140px;
+}
+.main .section-spaced .images .large-image {
+  margin: 0 0 15px;
+}
+.main .section-spaced .images .large-image img {
+  height: 260px;
+  max-height: 260px;
 }
 
 @media only screen and (max-width: 900px) {

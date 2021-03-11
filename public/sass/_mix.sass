@@ -1,14 +1,22 @@
 $browsers: webkit, moz, o
 
-@mixin eachBrowsers($propriety, $value)
+@mixin eachBrowsers($property, $value)
   @each $browser in $browsers
-    #{-$browser}-#{$propriety}: $value
-  #{$propriety}: $value
+    #{-$browser}-#{$property}: $value
+  #{$property}: $value
 
 @mixin transition($value)
-  $propriety: 'transition'
-  @include eachBrowsers($propriety, $value)
+  $property: 'transition'
+  @include eachBrowsers($property, $value)
+
+@mixin transform($value)
+  $property: 'transform'
+  @include eachBrowsers($property, $value)
+
+@mixin border-radius($value)
+  $property: 'border-radius'
+  @include eachBrowsers($property, $value)
 
 @mixin box-shadow($value)
-  $propriety: 'box-shadow'
-  @include eachBrowsers($propriety, $value)
+  $property: 'box-shadow'
+  @include eachBrowsers($property, $value)
