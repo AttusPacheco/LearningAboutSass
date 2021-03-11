@@ -241,6 +241,7 @@ header nav div.main-nav-mb ul li a {
   }
   header nav div.main-nav-mb:hover {
     width: 200px;
+    position: fixed;
   }
 }
 
