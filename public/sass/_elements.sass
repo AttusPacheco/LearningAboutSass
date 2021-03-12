@@ -1,0 +1,17 @@
+@import "variables"
+@import "mix"
+
+.default-title
+  font-weight: $title-font-weight
+  font-size: $title-font-size
+  color: $title-color
+
+.default-presentation-image
+  width: 100%
+  object-fit: cover
+  @include border-radius(5px)
+  @include transition(.3s)
+  @include box-shadow($default-box-shadow)
+
+  &:hover
+    @include transform(scale(1.05))

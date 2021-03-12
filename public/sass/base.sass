@@ -2,10 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap')
 @import "imports"
 
-@font-face
-  font-family: OpenSans
-  src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap')
-
 *
   padding: 0
   margin: 0
@@ -22,6 +18,10 @@ body
   background: #fff
 
 header
+  position: sticky
+  top: 0
+  z-index: 8
+
   nav
     display: flex
     justify-content: normal
@@ -32,7 +32,7 @@ header
     background-color: $header-color
     @include box-shadow($default-box-shadow)
 
-    .banner
+    .logo
       flex: 20%
 
       img
@@ -75,11 +75,13 @@ header
               @include box-shadow((10px 10px 25px rgb(255 255 255 / 20%), inset 10px 10px 25px rgb(255 255 255 / 10%)))
 
     div.main-nav-mb
-      position: absolute
       display: none
       right: 0
       width: 200px
       height: 100px
+      z-index: 9
+      position: fixed
+      top: 0
       @include transition((500ms height, 1s top, 1s background))
 
       &:hover
@@ -126,21 +128,50 @@ header
 
 .main
   .banner
-    width: fit-content
+    position: relative
+    width: 100%
 
-    img
+    .image img
       width: 100%
-      height: 380px
+      height: 85vh
+      min-height: 380px
       object-fit: cover
+      @include transition(.3s opacity)
+
+    .content
+      position: absolute
+      top: calc((85vh / 2) - 55px)
+      width: 80%
+      margin: 0 calc(100% - 90%)
+      opacity: 0
+      @include transition(.3s opacity)
+
+      .title
+        @extend .default-title
+        margin-bottom: 20px
+
+      .description
+        font-size: 18px
+        overflow: hidden
+        display: -webkit-box
+        -webkit-line-clamp: 7
+        -webkit-box-orient: vertical
+
+    &:hover
+      .image img
+        opacity: .8
+        @include transition(.4s opacity)
+
+      .content
+        opacity: 1
+
 
   .section-spaced
     width: 80%
     margin: 35px auto
 
     .title
-      font-size: $title-font-size
-      font-weight: $title-font-weight
-      color: $title-color
+      @extend .default-title
       text-align: center
       border-top: 2px
       border-left: 0
@@ -163,23 +194,13 @@ header
         flex: 45%
         padding: 0 10px
 
-      .image
-        width: 100%
-        object-fit: cover
-        @include border-radius(5px)
-        @include transition(.3s)
-        @include box-shadow($default-box-shadow)
-
-        &:hover
-          @include transform(scale(1.03))
-
       .small-image
         margin: 0 0 15px
 
         img
           height: 140px
           max-height: 140px
-          @extend .image
+          @extend .default-presentation-image
 
       .large-image
         margin: 0 0 15px
@@ -187,7 +208,7 @@ header
         img
           height: 260px
           max-height: 260px
-          @extend .image
+          @extend .default-presentation-image
 
 @media only screen and (max-width: $sz-mb-large)
   header
@@ -203,6 +224,14 @@ header
           ul
             display: block
 
+  .main .banner
+    .image img
+      height: 380px
+
+    .content
+      opacity: 1
+      top: calc(100vh / 6)
+
 @media only screen and (max-width: $sz-mb-small)
   header
     nav
@@ -210,4 +239,10 @@ header
         width: 100px
         &:hover
           width: 200px
-          position: fixed
+
+  .main .banner .content
+    top: calc(100vh / 9)
+
+@media only screen and (max-width: $sz-mb-very-small)
+  .main .banner .content
+    top: calc(100vh / 10)
